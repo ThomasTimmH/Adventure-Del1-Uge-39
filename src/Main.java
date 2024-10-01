@@ -2,8 +2,7 @@ import java.util.ArrayDeque;
 
 public class Main {
     public static void main(String[] args) {
-        Adventure adventure = new Adventure();
-UI UI = new UI(adventure);
-UI.setDisplayUI();
+Adventure adventure = new Adventure();
+adventure.setDisplayUI();
     }
 }

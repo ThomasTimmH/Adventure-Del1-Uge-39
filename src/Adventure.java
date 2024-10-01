@@ -1,77 +1,128 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Adventure {
+    private Creator creator;
     private Room currentRoom;
+    UI ui = new UI();
+    private Player player;
+
     public Adventure() {
-        Room nextRoom;
-        Room room1 = new Room("The Bleeding Gate ",
-                "A massive, bloodstained gate stands half-open, emitting a faint metallic screech as if warning you to stay away.");
-        Room room2 = new Room("The Hollow Cavern ",
-                "A cavern of shifting shadows and damp walls, where unseen whispers echo from the darkness.");
-        Room room3 = new Room("Cursed Miner's Quarters ",
-                "Abandoned bunks, haunted by shifting shadows, bear desperate claw marks scratched into the stone." );
-        Room room4 = new Room("The Forgotten Shrine ",
-                "An altar wrapped in pulsing black veins, exuding a suffocating aura of hunger and despair.");
-        Room room5 = new Room("The Abyssal Lair ",
-                "A pit of writhing shadows and skeletal remains, from which something ancient and hungry stirs beneath the surface.");
-        Room room6 = new Room("The Graven Crypts ",
-                "Open coffins line the walls, faint scratching sounds emerging from within the brittle bones.");
-        Room room7 = new Room("The Maw of Chains ",
-                "Endless chains sway from the ceiling, rattling as if guided by invisible hands above fragmented remains.");
-        Room room8 = new Room("The Blighted Workshop ",
-                "Tools covered in black slime lie scattered across the floor, and horrific machines wait silently in the shadows.");
-        Room room9 = new Room("The Unholy Forge ",
-                "A cold forge oozes black sludge, with twisted weapons discarded amid eerie chanting from the unseen darkness.");
-        room1.setEast(room2);
-        room1.setSouth(room4);
-
-        room2.setWest(room1);
-        room2.setEast(room3);
-
-        room3.setWest(room2);
-        room3.setSouth(room6);
-
-        room4.setNorth(room1);
-        room4.setSouth(room7);
-
-        room5.setSouth(room8);
-
-        room6.setNorth(room3);
-        room6.setSouth(room9);
-
-        room7.setNorth(room4);
-        room7.setEast(room8);
-
-        room8.setWest(room7);
-        room8.setEast(room9);
-
-        room9.setNorth(room6);
-        room9.setWest(room8);
-
-        currentRoom = room1;
-
+        creator = new Creator();
+        currentRoom = creator.map();
+        player = new Player(currentRoom);
     }
-    public String move(String direction){
-        Room nextRoom = null;
-        switch (direction){
-            case "go east" -> nextRoom = currentRoom.getEast();
-            case "go west" -> nextRoom = currentRoom.getWest();
-            case "go north" -> nextRoom = currentRoom.getNorth();
-            case "go south" -> nextRoom = currentRoom.getSouth();
-            default -> System.out.println("Invalid direction");
+
+    public void setDisplayUI() {
+        boolean inMenu = true;
+        while (inMenu) {
+            ui.grettingsMSG();
+            int menuChoice = ui.inputINT();
+            ui.input();
+            switch (menuChoice) {
+                case 1 -> {
+                    directionOptions();
+                    inMenu = false;
+                }
+
+                case 2 -> {
+                    System.out.println("Game over");
+                    inMenu = false;
+                }
+                case 3 -> {
+                    ui.helpMSG();
+                }
+                default -> System.out.println("Invalid option");
+            }
         }
+    }
 
-        if (nextRoom != null){
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getName() + currentRoom.getDescription());
-        } else {
-            System.out.println("You cant go that way");
+    public void directionOptions() {
+        boolean directionMenu = true;
+        while (directionMenu) {
+            Room nextRoom = null;
+            ui.printMSG("Now you have to decide where you wanna go");
+            String directionChoice = ui.input().toLowerCase();
+            String[] words = directionChoice.split(" ");
+
+            switch (words[0]) {
+                case "go" -> player.move(directionChoice);
+                case "inventory", "inv", "invent" -> ui.printMSG(player.showInventory());
+
+                case "take" -> {
+                    if(words.length > 1) {
+                        Item item = player.getCurrentRoom().findItem(words[1]);
+                        if (item != null) {
+                            player.takeItem(item); // Player takes the item
+                            player.getCurrentRoom().removeItem(item);
+                            ui.printMSG("You have taken the " + item.getShortName());
+                        } else {
+                            ui.printMSG("There is nothing like "+ words[1] + "to take araound here");
+                        }
+                    } else {
+                        ui.printMSG("You need to specify an item to take.");
+                    }
+                }
+
+                case "drop" -> {
+                    if (words.length > 1) {
+                    Item item = player.findInInventory(words[1]);
+                    if(item != null){
+                        player.dropItem(item);
+                        ui.printMSG("You have dropped the " + item.getShortName());
+                    } else {
+                        ui.printMSG("You dont have anything like this" + words[1]+ " in your inventory");
+                    }
+                    } else {
+                        ui.printMSG("you need to specify an item to drop");
+                    }
+                }
+                case "look" -> ui.printMSG(player.lookAround());
+
+                case "exit" -> {
+                    ui.printMSG("Game over goodbye");
+                    directionMenu = false;
+                }
+                case "help" -> {
+                    ui.helpMSG();
+                }
+            }
         }
-return "";
     }
-
-    public String lookAround(){
-        return "You are in " + currentRoom.getName()+ " " + currentRoom.getDescription();
-    }
-
 }
+
+
+
+  /*  public void directionOptions() {
+        boolean directionMenu = true;
+        while (directionMenu) {
+            Room nextRoom = null;
+            ui.printMSG("Now you have to decide where you wanna go");
+            String directionChoice = ui.input().toLowerCase();
+            String[] words = directionChoice.split(" ");
+
+            switch (directionChoice.toLowerCase()) {
+                case "go east" -> player.move("go east");
+                case "go south" -> player.move("go south");
+
+                case "go west" -> player.move("go west");
+
+                case "go north" -> player.move("go north");
+
+                case "look" -> {
+                    String lookAround = "look";
+                    if (directionChoice.equalsIgnoreCase(lookAround)) {
+                        ui.printMSG(player.lookAround());
+                    }
+                }
+                case "exit" -> {
+                    ui.printMSG("Game over goodbye");
+                    directionMenu = false;
+                }
+                case "help" -> {
+                    ui.helpMSG();
+                }
+            }
+        }
+    }
+} */
