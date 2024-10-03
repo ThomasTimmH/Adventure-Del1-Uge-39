@@ -25,9 +25,15 @@ public class Creator {
         Item lamp = new Item("a shiny lamp", "lamp"); // Using a constructor i made an item, with a name and a long name
         Item sword = new Item("a nice sword","sword");
 
+        Food cherry = new Food("a blue apple", "cherry", 25.0);
+        Food apple = new Food("a green shiny apple", "apple", -25.0);
+
         // Adding items to specific rooms
         room1.addItem(lamp);
         room2.addItem(sword);
+
+        room1.addItem(cherry);
+        room2.addItem(apple);
 
         // Setting the map layout by connecting rooms
         room1.setEast(room2);

@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class UI {
     Scanner scan = new Scanner(System.in);
     private Player player;
-    private Room room;
 
     public UI(Player player){
         this.player = player;
@@ -87,6 +86,35 @@ public class UI {
                     printMSG("Game over goodbye");
                     directionMenu = false;
                 }
+
+                case "health" -> {
+                    if (player.getLife() > 75 ){
+                        printMSG("You are in good health and are ready to fight");
+                        printMSGDouble(player.getLife());
+                    } if (player.getLife() > 50 && player.getLife() < 75 ){
+                        printMSG("You are okay, but not ready for a fight");
+                        printMSGDouble(player.getLife());
+                    } if(player.getLife() > 25 && player.getLife() < 50){
+                        printMSG("You are low on health and should find some food");
+                        printMSGDouble(player.getLife());
+                    } if(player.getLife() > 0 && player.getLife() < 25){
+                        printMSG("you are really low");
+                        printMSGDouble(player.getLife());
+                    }
+                }
+
+                case "eat" -> {
+                    if(words.length > 1){
+                        Item item = player.findInInventory(words[1]);
+                        player.eatItem(item);
+                        printMSG("You have eaten "+item);
+                        printMSGDouble(player.getLife());
+                    } else {
+                        printMSG("You cannot eat that item");
+                    }
+
+                }
+
                 case "help" -> {
                     helpMSG();
                 }
@@ -115,6 +143,14 @@ public class UI {
 
     public void printMSG(String msg){
         System.out.println(msg);
+    }
+
+    public void printMSGDouble(double msgd){
+        System.out.println(msgd);
+    }
+
+    public void moreWords(){
+
     }
 
 }

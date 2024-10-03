@@ -76,6 +76,6 @@ public class Room {
         if(!items.isEmpty()){
             itemList = "\nItems in the room "+items;
         }
-        return "You are in" + name + description + itemList;
+        return "You are in " + name + description + itemList;
     }
 }

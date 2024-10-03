@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Player {
     private Room currentRoom; // The current room where the player is located
     private ArrayList<Item> inventory; // Players inventory
+    private double life = 100;
 
     // constructor sets the starting room for the player
     public Player(Room startRoom) {
@@ -45,6 +46,13 @@ public class Player {
         return null; // Return null if item is not found
     }
 
+    public void eatItem(Item item){
+        if(item instanceof Food){
+            this.life += ((Food) item).getHealthOrDamage();
+            inventory.remove(item);
+        }
+    }
+
     // Method to move the player in a direction (north, south, east, west)
     public String move(String direction){
         Room nextRoom = null;
@@ -63,6 +71,10 @@ public class Player {
             System.out.println("You cant go that way");
         }
         return "";
+    }
+
+    public double getLife() {
+        return life;
     }
 
     // Method to look around the current room

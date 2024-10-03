@@ -1,11 +1,18 @@
 public class Item {
     private String longName;  // Full name of the item
     private String shortName; // Short name of the item
+    private double health;
 
     // Constructor to create an item with a long and a short name
     public Item(String longName, String shortName){
         this.longName=longName;
         this.shortName=shortName;
+    }
+
+    public Item (String longname, String shortName, double health){
+        this.longName=longname;
+        this.shortName=shortName;
+        this.health=health;
     }
 
     // Getter for the full name of the item
