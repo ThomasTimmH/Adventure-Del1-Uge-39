@@ -4,16 +4,22 @@ import java.util.Scanner;
 public class Adventure {
     private Creator creator;
     private Room currentRoom;
-    UI ui = new UI();
+    private UI ui;
     private Player player;
 
     public Adventure() {
         creator = new Creator();
         currentRoom = creator.map();
         player = new Player(currentRoom);
+        ui = new UI(player);
     }
 
     public void setDisplayUI() {
+        ui.setDisplayUI();
+    }
+
+
+   /* public void setDisplayUI() {
         boolean inMenu = true;
         while (inMenu) {
             ui.grettingsMSG();
@@ -57,7 +63,7 @@ public class Adventure {
                             player.getCurrentRoom().removeItem(item);
                             ui.printMSG("You have taken the " + item.getShortName());
                         } else {
-                            ui.printMSG("There is nothing like "+ words[1] + "to take araound here");
+                            ui.printMSG("There is nothing like "+ words[1] + "to take around here");
                         }
                     } else {
                         ui.printMSG("You need to specify an item to take.");
@@ -74,7 +80,7 @@ public class Adventure {
                         ui.printMSG("You dont have anything like this" + words[1]+ " in your inventory");
                     }
                     } else {
-                        ui.printMSG("you need to specify an item to drop");
+                        ui.printMSG("you need to specify an item to drop  ");
                     }
                 }
                 case "look" -> ui.printMSG(player.lookAround());
@@ -88,7 +94,7 @@ public class Adventure {
                 }
             }
         }
-    }
+    } */
 }
 
 

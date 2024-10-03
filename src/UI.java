@@ -2,7 +2,12 @@ import java.util.Scanner;
 
 public class UI {
     Scanner scan = new Scanner(System.in);
+    private Player player;
+    private Room room;
 
+    public UI(Player player){
+        this.player = player;
+    }
 
     public String input(){
         return scan.nextLine();
@@ -10,6 +15,83 @@ public class UI {
 
     public int inputINT(){
         return scan.nextInt();
+    }
+
+     public void setDisplayUI() {
+        boolean inMenu = true;
+        while (inMenu) {
+            grettingsMSG();
+            int menuChoice = inputINT();
+            input();
+            switch (menuChoice) {
+                case 1 -> {
+                    setDirectionOptions();
+                    inMenu = false;
+                }
+
+                case 2 -> {
+                    System.out.println("Game over");
+                    inMenu = false;
+                }
+                case 3 -> {
+                    helpMSG();
+                }
+                default -> System.out.println("Invalid option");
+            }
+        }
+    }
+
+    public void setDirectionOptions() {
+        boolean directionMenu = true;
+        while (directionMenu) {
+            Room nextRoom = null;
+            printMSG("Now you have to decide where you wanna go");
+            String directionChoice = input().toLowerCase();
+            String[] words = directionChoice.split(" ");
+
+            switch (words[0]) {
+                case "go" -> player.move(directionChoice);
+                case "inventory", "inv", "invent" -> printMSG(player.showInventory());
+
+                case "take" -> {
+                    if(words.length > 1) {
+                        Item item = player.getCurrentRoom().findItem(words[1]);
+                        if (item != null) {
+                            player.takeItem(item); // Player takes the item
+                            player.getCurrentRoom().removeItem(item);
+                            printMSG("You have taken the " + item.getShortName());
+                        } else {
+                            printMSG("There is nothing like "+ words[1] + "to take around here");
+                        }
+                    } else {
+                        printMSG("You need to specify an item to take.");
+                    }
+                }
+
+                case "drop" -> {
+                    if (words.length > 1) {
+                    Item item = player.findInInventory(words[1]);
+                    if(item != null){
+                        player.dropItem(item);
+                        printMSG("You have dropped the " + item.getShortName());
+                    } else {
+                        printMSG("You dont have anything like this" + words[1]+ " in your inventory");
+                    }
+                    } else {
+                        printMSG("you need to specify an item to drop  ");
+                    }
+                }
+                case "look" -> printMSG(player.lookAround());
+
+                case "exit" -> {
+                    printMSG("Game over goodbye");
+                    directionMenu = false;
+                }
+                case "help" -> {
+                    helpMSG();
+                }
+            }
+        }
     }
 
     public void helpMSG() {
@@ -35,9 +117,6 @@ public class UI {
         System.out.println(msg);
     }
 
-    public void printMSGRoom(Room msg){
-        System.out.println(msg);
-    }
 }
 
 
