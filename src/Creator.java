@@ -25,15 +25,27 @@ public class Creator {
         Item lamp = new Item("a shiny lamp", "lamp"); // Using a constructor i made an item, with a name and a long name
         Item sword = new Item("a nice sword","sword");
 
-        Food cherry = new Food("a blue apple", "cherry", 25.0);
-        Food apple = new Food("a green shiny apple", "apple", -25.0);
+        // Creating food items with long, short names, health or damage
+        Food cherry = new Food("a red cherry", "cherry", 25.0);
+        Food apple = new Food("a green shiny apple, looks poisened", "apple", -25.0);
+        Food shrooms = new Food("black shrooms", "", -45.0);
+
+        Liquid beer = new Liquid("an icecold beer", "beer ", 10);
+        Liquid water = new Liquid("very dirty water", "water", -5.0);
 
         // Adding items to specific rooms
         room1.addItem(lamp);
         room2.addItem(sword);
 
+        // Adding food items to the rooms
         room1.addItem(cherry);
         room2.addItem(apple);
+        room3.addItem(shrooms);
+
+        // Adding liquid items to the rooms
+        room1.addItem(beer);
+        room1.addItem(water);
+
 
         // Setting the map layout by connecting rooms
         room1.setEast(room2);

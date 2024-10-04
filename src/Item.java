@@ -9,12 +9,6 @@ public class Item {
         this.shortName=shortName;
     }
 
-    public Item (String longname, String shortName, double health){
-        this.longName=longname;
-        this.shortName=shortName;
-        this.healthOrDamage=healthOrDamage;
-    }
-
     // Getter for the full name of the item
     public String getLongName(){
         return longName;

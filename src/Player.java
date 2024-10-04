@@ -48,8 +48,20 @@ public class Player {
 
     public void eatItem(Item item){
         if(item instanceof Food){
-            this.life += ((Food) item).getHealthOrDamage();
+                this.life += ((Food) item).getHealthOrDamage();
+                inventory.remove(item);
+                if(life > 100){
+                    life = 100;
+                }
+        }
+    }
+    public void drinkItem(Item item){
+        if(item instanceof Liquid){
+            this.life += ((Liquid) item).getHealthOrDamage();
             inventory.remove(item);
+            if(life > 100){
+                life = 100;
+            }
         }
     }
 
@@ -66,11 +78,11 @@ public class Player {
         // If there is a room in the direction, move the player
         if (nextRoom != null){
             currentRoom=nextRoom;
-            System.out.println(currentRoom.getName() + currentRoom.getDescription());
+            return (currentRoom.getName() + currentRoom.getDescription());
         } else {
-            System.out.println("You cant go that way");
+            return ("You cant go that way");
         }
-        return "";
+
     }
 
     public double getLife() {

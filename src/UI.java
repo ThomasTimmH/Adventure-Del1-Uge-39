@@ -60,7 +60,7 @@ public class UI {
                             player.getCurrentRoom().removeItem(item);
                             printMSG("You have taken the " + item.getShortName());
                         } else {
-                            printMSG("There is nothing like "+ words[1] + "to take around here");
+                            printMSG("There is nothing like "+ words[1] + " to take around here");
                         }
                     } else {
                         printMSG("You need to specify an item to take.");
@@ -106,13 +106,30 @@ public class UI {
                 case "eat" -> {
                     if(words.length > 1){
                         Item item = player.findInInventory(words[1]);
-                        player.eatItem(item);
-                        printMSG("You have eaten "+item);
-                        printMSGDouble(player.getLife());
+                        if(item instanceof Food){
+                            player.eatItem(item);
+                            printMSG("You have eaten "+item);
+                            printMSGDouble(player.getLife());
+                        } else  {
+                            printMSG("You cannot eat that item");
+                        }
                     } else {
                         printMSG("You cannot eat that item");
                     }
-
+                }
+                case "drink" -> {
+                    if(words.length > 1){
+                        Item item = player.findInInventory(words[1]);
+                        if(item instanceof Liquid){
+                            player.drinkItem(item);
+                            printMSG("You drank "+item);
+                            printMSGDouble(player.getLife());
+                        } else {
+                            printMSG("You cannot drink this");
+                        }
+                    } else {
+                        printMSG("you cannot drink that item");
+                    }
                 }
 
                 case "help" -> {
