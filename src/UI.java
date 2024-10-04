@@ -133,7 +133,7 @@ public class UI {
     }
 
     public void grettingsMSG(){
-        System.out.println("Welcome to the room");
+        System.out.println("Dead Man's Shaft");
         System.out.println("Go to help commands to see how you use commands");
         System.out.println("Game menu");
         System.out.println("Press 1 to start the game");

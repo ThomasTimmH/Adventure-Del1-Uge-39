@@ -6,6 +6,8 @@ public Food(String longname, String name, double healthOrDamage){
     this.healthOrDamage=healthOrDamage;
 }
 
+
+
     public double getHealthOrDamage() {
         return healthOrDamage;
     }

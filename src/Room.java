@@ -39,10 +39,6 @@ public class Room {
         return null;
     }
 
-    public Room(){
-
-    }
-
     public Room getCurrentRoom() {
         return currentRoom;
     }
