@@ -4,6 +4,7 @@ public class Player {
     private Room currentRoom; // The current room where the player is located
     private ArrayList<Item> inventory; // Players inventory
     private double life = 100;
+    private Weapon equippedWeapon;
 
     // constructor sets the starting room for the player
     public Player(Room startRoom) {
@@ -64,6 +65,18 @@ public class Player {
             }
         }
     }
+
+    public void equipItem(Item item){
+            if(item instanceof Weapon){
+                equippedWeapon = (Weapon) item;
+            }
+            }
+
+
+        public Weapon getEquippedWeapon(){
+        return  equippedWeapon;
+        }
+
 
     // Method to move the player in a direction (north, south, east, west)
     public String move(String direction){

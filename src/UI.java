@@ -132,6 +132,30 @@ public class UI {
                     }
                 }
 
+                case "equip" -> {
+                    if(words.length > 1){
+                        Item item = player.findInInventory(words[1]);
+                        if(item instanceof Weapon){
+                            player.equipItem(item);
+                            printMSG("You equipped " + item);
+                        } else {
+                            printMSG("You cannot equip that because it aint a weapon");
+                        }
+                    }
+                }
+
+                case "attack" -> {
+                    if (player.getEquippedWeapon() == null){
+                        printMSG("You dont have a weapon equipped");
+                    }
+                    if(player.getEquippedWeapon().canUse()){
+                        printMSG(player.getEquippedWeapon().attack());
+                    } else {
+                        System.out.println("The " + player.getEquippedWeapon().getShortName() + " cannot be used anymore");
+                    }
+                }
+
+
                 case "help" -> {
                     helpMSG();
                 }

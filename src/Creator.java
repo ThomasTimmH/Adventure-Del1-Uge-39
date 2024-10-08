@@ -33,6 +33,10 @@ public class Creator {
         Liquid beer = new Liquid("an icecold beer", "beer ", 10);
         Liquid water = new Liquid("very dirty water", "water", -5.0);
 
+        MeleeWeapon speer = new MeleeWeapon("an old and rusty speer", "speer",10.0);
+
+        RangedWeapon bow = new RangedWeapon("a half rotten bow", "bow", 5.0,5 );
+
         // Adding items to specific rooms
         room1.addItem(lamp);
         room2.addItem(sword);
@@ -45,6 +49,10 @@ public class Creator {
         // Adding liquid items to the rooms
         room1.addItem(beer);
         room1.addItem(water);
+
+        room1.addItem(speer);
+
+        room1.addItem(bow);
 
 
         // Setting the map layout by connecting rooms
