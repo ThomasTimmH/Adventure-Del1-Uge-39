@@ -1,0 +1,149 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36" version="24.7.17">
+  <diagram name="Side-1" id="KQoDRN_ZPVMTdRD1wrp-">
+    <mxGraphModel dx="1834" dy="1222" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-3" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="176" y="-203" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;fontSize=12;curved=1;" edge="1" source="MgAUp-PCli7QhxEW8TXx-3" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="191" y="-113" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-22" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-5" target="MgAUp-PCli7QhxEW8TXx-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-23" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-5" target="MgAUp-PCli7QhxEW8TXx-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-5" value="Is there an enemy in the room?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="151" y="-113" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-24" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-6" target="MgAUp-PCli7QhxEW8TXx-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-6" value="Yes" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="295" y="-103" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-16" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-7" target="MgAUp-PCli7QhxEW8TXx-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-7" value="&lt;div&gt;No&lt;/div&gt;Display(There are no enemies to attack)" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-26" y="-103" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-25" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-8" target="MgAUp-PCli7QhxEW8TXx-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-26" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-8" target="MgAUp-PCli7QhxEW8TXx-10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-8" value="Does the player have a weapon?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="315" y="25" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-27" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-9" target="MgAUp-PCli7QhxEW8TXx-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-9" value="Yes" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="451" y="35" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-18" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-10" target="MgAUp-PCli7QhxEW8TXx-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-10" value="No&lt;div&gt;Display(You dont have a weapon)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="143" y="35" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-28" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-11" target="MgAUp-PCli7QhxEW8TXx-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-29" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-11" target="MgAUp-PCli7QhxEW8TXx-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-11" value="Can that weapon be used" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="471" y="162" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-20" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-12" target="MgAUp-PCli7QhxEW8TXx-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-12" value="No&lt;div&gt;Display(That weapon cant be used)&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="295" y="172" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-30" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-13" target="MgAUp-PCli7QhxEW8TXx-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-13" value="Yes" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="607" y="172" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-31" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-14" target="MgAUp-PCli7QhxEW8TXx-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-14" value="Player attacks enemy" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="607" y="291" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-15" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="19" y="-5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-17" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="188" y="130" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-19" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="340" y="268" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-38" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-21" target="MgAUp-PCli7QhxEW8TXx-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-21" value="Enemy takes damage" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="607" y="399" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-39" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-32" target="MgAUp-PCli7QhxEW8TXx-34">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-40" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-32" target="MgAUp-PCli7QhxEW8TXx-33">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-32" value="Is enemy dead?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="627" y="498" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-42" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-33" target="MgAUp-PCli7QhxEW8TXx-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-33" value="No" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="471" y="508" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-41" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-34" target="MgAUp-PCli7QhxEW8TXx-35">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-34" value="Yes" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="743" y="508" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-46" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-35" target="MgAUp-PCli7QhxEW8TXx-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-35" value="removing enemy from the room and droppings his/her items in that room" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="743" y="614" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-43" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-36">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="531" y="719" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-36" value="Enemy counterattacks" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="471" y="614" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-47" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="MgAUp-PCli7QhxEW8TXx-37" target="MgAUp-PCli7QhxEW8TXx-45">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-37" value="Player takes damage" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="471" y="720" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-44" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="788" y="693" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="MgAUp-PCli7QhxEW8TXx-45" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="516" y="802" width="30" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
