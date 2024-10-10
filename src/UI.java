@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UI {
@@ -145,11 +146,36 @@ public class UI {
                 }
 
                 case "attack" -> {
+                    ArrayList<Enemy> enemies = player.getCurrentRoom().getEnemies();
+                    if(enemies.isEmpty()){
+                        printMSG("There are no enemies to attack here");
+                        break;
+                    }
+
+                    Enemy enemy = enemies.get(0);
+
                     if (player.getEquippedWeapon() == null){
                         printMSG("You dont have a weapon equipped");
+                        break;
                     }
                     if(player.getEquippedWeapon().canUse()){
+                        printMSG("You attack " + enemy.getName() + " with " + player.getEquippedWeapon().getShortName());
                         printMSG(player.getEquippedWeapon().attack());
+
+                        enemy.reduceHealth(player.getEquippedWeapon().getDamage());
+                        printMSG(enemy.getName()+ " has " + enemy.getHealth() + " health remaining");
+
+                        player.takeDamage(enemy.getEquippedWeapon().getDamage());
+                        printMSG("You took " + enemy.getEquippedWeapon().getDamage() + " damage, and you have " + player.getLife() + " health");
+
+                        if(enemy.getHealth() <= 0){
+                            printMSG(enemy.getName() + " has been defeated");
+                            player.getCurrentRoom().removeEnemy(enemy);
+
+                            player.getCurrentRoom().addItem(enemy.getEquippedWeapon());
+                            printMSG(enemy.getEquippedWeapon().getShortName() + "dropped by" + enemy.getName() + ".");
+                        }
+
                     } else {
                         System.out.println("The " + player.getEquippedWeapon().getShortName() + " cannot be used anymore");
                     }
@@ -190,9 +216,6 @@ public class UI {
         System.out.println(msgd);
     }
 
-    public void moreWords(){
-
-    }
 
 }
 

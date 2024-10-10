@@ -30,16 +30,30 @@ public class Creator {
         Food apple = new Food("a green shiny apple, looks poisened", "apple", -25.0);
         Food shrooms = new Food("black shrooms", "", -45.0);
 
+        // Creating liquid items with a, short names, health or damage
         Liquid beer = new Liquid("an icecold beer", "beer ", 10);
         Liquid water = new Liquid("very dirty water", "water", -5.0);
 
+        // Creating melee weapons with a short, long name and damage
         MeleeWeapon speer = new MeleeWeapon("an old and rusty speer", "speer",10.0);
+        MeleeWeapon axe = new MeleeWeapon("big and bloody axe", "axe",15.0);
+        MeleeWeapon ratclaw = new MeleeWeapon("dirty rat claw", "ratclaw", 5.0);
 
+        // Creating ranged weapons with a short, long name, damage, and ammo/uses
         RangedWeapon bow = new RangedWeapon("a half rotten bow", "bow", 5.0,5 );
+        RangedWeapon ratcannon = new RangedWeapon("a cannon that shoots rats", "ratcannon", 10, 1000);
+        RangedWeapon staff = new RangedWeapon("a cursed staff", "staff", 10, 1000);
+
+
+        // Creating enemies with a name, health and a weapon
+        Enemy goblin = new Enemy("Goblin", 10, bow);
+        Enemy rat = new Enemy("Rat", 5.0, ratclaw);
+        Enemy ogre = new Enemy("Ogre", 25.0, axe );
+        Enemy witch = new Enemy("Witch", 25, staff);
+        Enemy ratking = new Enemy("Ratking", 50, ratcannon);
+
 
         // Adding items to specific rooms
-        room1.addItem(lamp);
-        room2.addItem(sword);
 
         // Adding food items to the rooms
         room1.addItem(cherry);
@@ -50,8 +64,15 @@ public class Creator {
         room1.addItem(beer);
         room1.addItem(water);
 
-        room1.addItem(speer);
+        // Adding enemys to the rooms
+        room1.addEnemy(rat);
+        room3.addEnemy(ogre);
+        room4.addEnemy(goblin);
+        room8.addEnemy(witch);
+        room5.addEnemy(ratking);
 
+        // Adding items to the rooms
+        room1.addItem(speer);
         room1.addItem(bow);
 
 

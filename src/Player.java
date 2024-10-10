@@ -13,75 +13,76 @@ public class Player {
     }
 
     // Getter for the current room
-    public Room getCurrentRoom(){
+    public Room getCurrentRoom() {
         return currentRoom;
     }
 
     // Method for taking an item, removing it from the room and adding it to the inventory
-    public void takeItem(Item item){
+    public void takeItem(Item item) {
         inventory.add(item);
         currentRoom.removeItem(item);
     }
 
     // Method for dropping an item, removing it from the inventory and adding it to the room
-    public void dropItem(Item item){
+    public void dropItem(Item item) {
         inventory.remove(item);
         currentRoom.addItem(item);
     }
 
     // Method to show the player's current inventory
-    public String showInventory(){
-        if(inventory.isEmpty()){
+    public String showInventory() {
+        if (inventory.isEmpty()) {
             return " Your inventory is empty";
         }
         return "You are carrying " + inventory;
     }
 
     // Method to find an item in the inventory by its short name
-    public Item findInInventory(String shortName){
-        for(Item item : inventory){
-            if(item.getShortName().equalsIgnoreCase(shortName)){
+    public Item findInInventory(String shortName) {
+        for (Item item : inventory) {
+            if (item.getShortName().equalsIgnoreCase(shortName)) {
                 return item;
             }
         }
         return null; // Return null if item is not found
     }
 
-    public void eatItem(Item item){
-        if(item instanceof Food){
-                this.life += ((Food) item).getHealthOrDamage();
-                inventory.remove(item);
-                if(life > 100){
-                    life = 100;
-                }
-        }
-    }
-    public void drinkItem(Item item){
-        if(item instanceof Liquid){
-            this.life += ((Liquid) item).getHealthOrDamage();
+    public void eatItem(Item item) {
+        if (item instanceof Food) {
+            this.life += ((Food) item).getHealthOrDamage();
             inventory.remove(item);
-            if(life > 100){
+            if (life > 100) {
                 life = 100;
             }
         }
     }
 
-    public void equipItem(Item item){
-            if(item instanceof Weapon){
-                equippedWeapon = (Weapon) item;
+    public void drinkItem(Item item) {
+        if (item instanceof Liquid) {
+            this.life += ((Liquid) item).getHealthOrDamage();
+            inventory.remove(item);
+            if (life > 100) {
+                life = 100;
             }
-            }
-
-
-        public Weapon getEquippedWeapon(){
-        return  equippedWeapon;
         }
+    }
+
+    public void equipItem(Item item) {
+        if (item instanceof Weapon) {
+            equippedWeapon = (Weapon) item;
+        }
+    }
+
+
+    public Weapon getEquippedWeapon() {
+        return equippedWeapon;
+    }
 
 
     // Method to move the player in a direction (north, south, east, west)
-    public String move(String direction){
+    public String move(String direction) {
         Room nextRoom = null;
-        switch (direction){
+        switch (direction) {
             case "go east" -> nextRoom = currentRoom.getEast();
             case "go west" -> nextRoom = currentRoom.getWest();
             case "go north" -> nextRoom = currentRoom.getNorth();
@@ -89,8 +90,8 @@ public class Player {
         }
 
         // If there is a room in the direction, move the player
-        if (nextRoom != null){
-            currentRoom=nextRoom;
+        if (nextRoom != null) {
+            currentRoom = nextRoom;
             return (currentRoom.getName() + currentRoom.getDescription());
         } else {
             return ("You cant go that way");
@@ -103,8 +104,15 @@ public class Player {
     }
 
     // Method to look around the current room
-    public String lookAround(){
+    public String lookAround() {
         return currentRoom.toString();
+    }
+
+    public void takeDamage(double damage) {
+        this.life -= damage;
+        if (this.life < 0) {
+            this.life = 0;
+        }
     }
 
 }
